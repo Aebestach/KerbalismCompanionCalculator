@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using KSP.UI.Screens;
-using KSP.Localization;
 using UnityEngine.UI;
 
 namespace KerbalismCompanionCalculator
@@ -49,27 +48,41 @@ namespace KerbalismCompanionCalculator
         public void ReloadVessel()
         {
             List<ModuleDataTransmitter> moduleList = new List<ModuleDataTransmitter>();
+            if (EditorLogic.fetch?.ship?.parts == null || kalkulatorUI == null)
+            {
+                if (kalkulatorUI != null)
+                    kalkulatorUI.moduleList = moduleList;
+                return;
+            }
+
             foreach (Part part in EditorLogic.fetch.ship.parts)
             {
                 if (part.HasModuleImplementing<ModuleDataTransmitter>() && !part.HasModuleImplementing<ModuleCommand>())
                 {
                     foreach (ModuleDataTransmitter module in part.Modules.GetModules<ModuleDataTransmitter>())
                     {
+                        bool added = false;
                         if ((module.antennaType == AntennaType.DIRECT || module.antennaType == AntennaType.INTERNAL) && detectAntennas)
+                        {
                             moduleList.Add(module);
+                            added = true;
+                        }
                         else if (module.antennaType == AntennaType.RELAY && detectRelays)
+                        {
                             moduleList.Add(module);
+                            added = true;
+                        }
+
+                        if (!added)
+                            continue;
 
                         PlannerController plannerController = part.Modules.GetModule<PlannerController>();
-
-                        if (!plannerController.considered)
-                        {
+                        if (plannerController != null && !plannerController.considered)
                             moduleList.RemoveAt(moduleList.Count - 1);
-                        }
                     }
                 }
-                kalkulatorUI.moduleList = moduleList;
             }
+            kalkulatorUI.moduleList = moduleList;
         }
 
         public void createAppLauncher()

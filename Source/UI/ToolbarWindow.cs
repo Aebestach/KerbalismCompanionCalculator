@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 namespace KerbalismCompanionCalculator.UI
 {
@@ -69,7 +66,6 @@ namespace KerbalismCompanionCalculator.UI
 
             ChangeSliderValues(Convert.ToSingle(Bodies.getMinDistance(FlightGlobals.GetHomeBody(), celestialBodies[0])),
                                Convert.ToSingle(Bodies.getMaxDistance(FlightGlobals.GetHomeBody(), celestialBodies[0])));
-
         }
 
         private void onDetectRelaysValueChanged(Toggle detectRelays)
@@ -88,7 +84,6 @@ namespace KerbalismCompanionCalculator.UI
         {
             ChangeSliderValues(Convert.ToSingle(Bodies.getMinDistance(FlightGlobals.GetHomeBody(), celestialBodies[value])),
                                Convert.ToSingle(Bodies.getMaxDistance(FlightGlobals.GetHomeBody(), celestialBodies[value])));
-
         }
 
         private void FillDropdownMenu(List<CelestialBody> celestialBodies)
@@ -127,8 +122,6 @@ namespace KerbalismCompanionCalculator.UI
             else
                 return Convert.ToString(Math.Round(Math.Abs(currentValue) / 1000000000, 1)) + "Gm";
         }
-
-
 
         private void Update()
         {
