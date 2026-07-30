@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- Copy to KerbalismCompanionCalculator.props.user and set your local KSP install path. -->
+    <KSPBT_GameRoot>C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program</KSPBT_GameRoot>
+    <!-- Optional: also copy GameData/KerbalismCompanionCalculator into that install on build. -->
+    <KCC_DeployToKsp>true</KCC_DeployToKsp>
+  </PropertyGroup>
+</Project>
