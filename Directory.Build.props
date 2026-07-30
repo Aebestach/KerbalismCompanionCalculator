@@ -9,7 +9,7 @@
     <ProjectRootDir>$(MSBuildThisFileDirectory)</ProjectRootDir>
     <SolutionDir Condition=" '$(SolutionDir)' == '' ">$(ProjectRootDir)</SolutionDir>
     <SolutionName Condition=" '$(SolutionName)' == '' ">KerbalismCompanionCalculator</SolutionName>
-    <KCCPackageVersion>1.3.0</KCCPackageVersion>
+    <KCCPackageVersion>1.3.1</KCCPackageVersion>
   </PropertyGroup>
 
   <!-- KSPBuildTools CKAN auto-install uses bash input redirect; broken on Windows cmd. -->
