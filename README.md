@@ -4,21 +4,11 @@ K³ implements an antenna planner for Kerbalism.
 **Maintained fork:** https://github.com/Aebestach/KerbalismCompanionCalculator
 
 ### Compatibility
+* Kerbalism 3.40+
 * Stock CommNet only (not RemoteTech)
 * All kind of planet packs
 * ResearchBodies support
 * NFeX Reflectors support
-
-### Build
-1. Copy `KerbalismCompanionCalculator.props.user.example` to `KerbalismCompanionCalculator.props.user`
-2. Set `KSPBT_GameRoot` to a KSP 1.12 install that already has Kerbalism (`GameData/Kerbalism/Kerbalism.dll`)
-3. Build:
-
-```bash
-dotnet build KerbalismCompanionCalculator.sln -c Release
-```
-
-Optional: set `KCC_DeployToKsp` to `true` in the props.user file to copy `GameData/KerbalismCompanionCalculator` into that install after build.
 
 ![image](https://i.imgur.com/tzt9ruC.png "Planner GUI")
 
