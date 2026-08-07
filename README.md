@@ -1,8 +1,6 @@
 # Kerbalism Companion Calculator
 K³ implements an antenna planner for Kerbalism.
 
-**Maintained fork:** https://github.com/Aebestach/KerbalismCompanionCalculator
-
 ### Compatibility
 * Kerbalism 3.40+
 * Stock CommNet only (not RemoteTech)
